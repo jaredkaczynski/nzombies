@@ -130,5 +130,13 @@
 			"type"		"CheckBox"
 			"default"	"0"
 		}
+		15
+		{
+			"name"		"nz_extend_perk_time"
+			"text"		"Point Time Extension"
+			"help"		"Set to 1 to extend perk times."
+			"type"		"CheckBox"
+			"default"	"1"
+		}
 	}
 }
