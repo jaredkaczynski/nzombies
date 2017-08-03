@@ -51,7 +51,11 @@ if SERVER then
 				if not self.ActivePowerUps[id] then
 					PowerupData.func(id, ply)
 				end
-				self.ActivePowerUps[id] = CurTime() + PowerupData.duration
+				if self.ActivePowerUps[id] and GetConVar("nz_extend_perk_time"):GetBool() and self.ActivePowerUps[id] > CurTime() then
+					self.ActivePowerUps[id] = PowerupData.duration + self.ActivePowerUps[id]
+				else 
+					self.ActivePowerUps[id] = CurTime() + PowerupData.duration
+				end
 			else
 				-- Activate Once
 				PowerupData.func(id, ply)
