@@ -107,6 +107,12 @@ function ENT:Use(activator, caller)
 							timer.Simple(3, function()
 								if IsValid(activator) and activator:GetNotDowned() then
 									activator:GivePerk(id, self)
+									local vm = activator:GetViewModel()
+									if IsValid(vm) then 
+										vm:SetMaterial('')
+									else 
+										Print("Invalid View Model") 
+									end
 								end
 							end)
 						else
