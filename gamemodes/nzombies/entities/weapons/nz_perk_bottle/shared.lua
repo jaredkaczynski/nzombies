@@ -75,7 +75,6 @@ function SWEP:Initialize()
 end
 
 function SWEP:Equip( owner )
-	
 	timer.Simple(3.2,function()
 		owner:SetUsingSpecialWeapon(false)
 		owner:EquipPreviousWeapon()

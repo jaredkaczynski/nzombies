@@ -38,6 +38,10 @@ function nzRevive.HandleRevive(ply, ent)
 			if nzRevive.Players[id] then
 				if !nzRevive.Players[id].RevivePlayer then
 					dply:StartRevive(ply)
+					timer.Simple(100,function()
+						ply.Reviving:StopRevive()
+						ply.Reviving = nil
+					end)
 				end
 
 				-- print(CurTime() - nzRevive.Players[id].ReviveTime)
